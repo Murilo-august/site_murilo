@@ -60,15 +60,43 @@ const versions = [
 
 // Function to display games
 function displayGames() {
-    const gamesSection = document.getElementById('games');
-    let gamesHTML = '';
+    const gamesSection = document.getElementById("games");
+    let gamesHTML = "";
 
-    games.forEach(game => {
+    games.forEach (game => {
         gamesHTML += `<p>${game.name} - Released in ${game.releaseYear}; Platform: ${game.platform}</p>`;
     });
 
     gamesSection.innerHTML = gamesHTML;
 }
 
-// Call the function to display the games
-displayGames();
+// Function to display teams
+function displayTeams() {
+    const teamsSection = document.getElementById("teams");
+    let teamsHTML = "";
+
+    teams.forEach (team => {
+        teamsHTML += `<p>${team.name} - League: ${team.league}; Country: ${team.country}</p>`;
+    });
+
+    teamsSection.innerHTML = teamsHTML;
+}
+
+// Function to display versions
+function displayVersions() {
+    const versionsSection = document.getElementById("versions");
+    let versionsHTML = "";
+
+    versions.forEach (version => {
+        versionsHTML += `<p>${version.name} - Features: ${version.features}; Improvements: ${version.improvements}</p>`;
+    });
+
+    versionsSection.innerHTML = versionsHTML;
+}
+
+
+
+// Event listeners to trigger displaying teams and versions
+document.getElementById("gamesBtn").addEventListener("click", displayGames);
+document.getElementById("teamsBtn").addEventListener("click", displayTeams);
+document.getElementById("versionsBtn").addEventListener("click", displayVersions);
